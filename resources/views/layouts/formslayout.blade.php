@@ -66,13 +66,27 @@
         height: 30px;
     }
 
+    button[type="reset"] {
+        background-color: #007bff;
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+        width: 40%;
+        height: 30px;
+    }
+
     button[type="submit"]:hover {
         background-color: #0056b3;
 
     }
 
+    button[type="reset"] {
+        background-color: #f80a06;
+
+    }
+
     p {
-       text-align: center;
+        text-align: center;
         text-align: left;
         margin-top: 10px;
     }

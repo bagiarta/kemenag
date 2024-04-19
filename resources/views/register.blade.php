@@ -21,6 +21,7 @@
             <input type="email" name="email" placeholder="email">
             <input type="password" name="password" placeholder="Password">
             <button type="submit">Daftar</button>
+            <button type="reset">Batal</button>
         </form>
 
         <p style="text-align: center">Sudah punya akun? <a href="{{ route('login') }}">login</a></p>
