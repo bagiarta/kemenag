@@ -72,16 +72,19 @@
     }
 
     p {
+       text-align: center;
         text-align: left;
         margin-top: 10px;
     }
 
     p a {
+        text-align: center;
         color: #007bff;
         text-decoration: none;
     }
 
     p a:hover {
+
         text-decoration: underline;
     }
 </style>

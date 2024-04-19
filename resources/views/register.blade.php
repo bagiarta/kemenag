@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-@extends('layouts.logins')
+@extends('layouts.formslayout')
 
 
 <head>
@@ -10,18 +10,20 @@
 </head>
 
 <body>
-    <h1> Registrasi </h1>
+    <div class="banner">
+        <img src="{{ asset('image/kopsurat.png') }}" alt="banner">
+        <h1> Registrasi </h1>
 
-    <form action="{{ route('register.custom') }}" method="POST">
-        @csrf
-        <input type="text" name="name" placeholder="Full Name">
-        <input type="email" name="email" placeholder="Email Address">
-        <input type="password" name="password" placeholder="Password">
-        <input type="password" name="password_confirmation" placeholder="Confirm Password">
-        <button type="submit">Daftar</button>
-    </form>
+        <form action="{{ route('register.custom') }}" method="POST">
+            @csrf
+            <input type="text" name="nik" placeholder="Full Name">
+            <input type="text" name="nama" placeholder="nama">
+            <input type="email" name="email" placeholder="email">
+            <input type="password" name="password" placeholder="Password">
+            <button type="submit">Daftar</button>
+        </form>
 
-    <p>Sudah punya akun? <a href="{{ route('login') }}">Klik disini untuk login</a></p>
+        <p style="text-align: center">Sudah punya akun? <a href="{{ route('login') }}">login</a></p>
 </body>
 
 </html>
