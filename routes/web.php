@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\KemenagController;
+use App\Http\Controllers\BiodataController;
 
 Route::get('/', function () {
     return view('dashboard');
@@ -24,3 +25,6 @@ route::get('public', [KemenagController::class, 'public'])->name('public');
 route::get('legalisir', [KemenagController::class, 'legalisir'])->name('legalisir');
 route::get('biodata', [KemenagController::class, 'biodata'])->name('biodata');
 route::get('updatebiodata', [KemenagController::class, 'updatebiodata'])->name('updatebiodata');
+
+//route biodata//
+Route::get('/biodata/{nik}', [BiodataController::class, 'show'])->name('biodata.show');
