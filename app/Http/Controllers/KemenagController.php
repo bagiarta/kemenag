@@ -46,4 +46,8 @@ class KemenagController extends Controller
         return view('forms.form_biodata');
     }
 
+    public function updatebiodata()
+    {
+        return view('forms.form_update_biodata');
+    }
 }

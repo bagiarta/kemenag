@@ -22,5 +22,5 @@ route::get('formkonsultasi', [KemenagController::class, 'formkonsultasi'])->name
 route::get('formizin', [KemenagController::class, 'formizin'])->name('formizin');
 route::get('public', [KemenagController::class, 'public'])->name('public');
 route::get('legalisir', [KemenagController::class, 'legalisir'])->name('legalisir');
-route::get('biodata', [KemenagController::class,'biodata'])->name('biodata');
-
+route::get('biodata', [KemenagController::class, 'biodata'])->name('biodata');
+route::get('updatebiodata', [KemenagController::class, 'updatebiodata'])->name('updatebiodata');
