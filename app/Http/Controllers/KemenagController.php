@@ -41,4 +41,9 @@ class KemenagController extends Controller
         return view('forms.form_legalisir');
     }
 
+    public function biodata()
+    {
+        return view('forms.form_biodata');
+    }
+
 }

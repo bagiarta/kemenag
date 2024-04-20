@@ -46,6 +46,7 @@
     input[type="email"],
     input[type="password"],
     input[type="file"],
+    input[type="date"],
     textarea,
     select {
         width: 100%;
@@ -101,7 +102,11 @@
 
         text-decoration: underline;
     }
-</style>
+
+    input[type="radio"]
+
+
+    </style>
 
 
 
