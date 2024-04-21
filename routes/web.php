@@ -27,7 +27,7 @@ route::get('public', [KemenagController::class, 'public'])->name('public');
 route::get('legalisir', [KemenagController::class, 'legalisir'])->name('legalisir');
 route::get('biodata', [KemenagController::class, 'biodata'])->name('biodata');
 route::get('updatebiodata', [KemenagController::class, 'updatebiodata'])->name('updatebiodata');
-Route::post('/register', [UserController::class, 'create'])->name('register');
+Route::post('/register', [UserController::class, 'store'])->name('register.store');
 
 
 //route biodata//

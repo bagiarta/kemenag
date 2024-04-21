@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 @extends('layouts.formslayout')
@@ -14,12 +16,16 @@
         <img src="{{ asset('image/kopsurat.png') }}" alt="banner">
         <h1> Registrasi </h1>
 
-        <form action="{{ route('register.custom') }}" method="POST">
+        <form action="{{ route('register.store') }}" method="POST">
             @csrf
-            <input type="text" name="nik" placeholder="Full Name">
-            <input type="text" name="nama" placeholder="nama">
-            <input type="email" name="email" placeholder="email">
-            <input type="password" name="password" placeholder="Password">
+            <label for="nik">Nik</label>
+            <input type="text" name="nik" placeholder="nik" required>
+            <label for="nama">Nama</label>
+            <input type="text" name="nama" placeholder="nama" required>
+            <label for="email">Email</label>
+            <input type="email" name="email" placeholder="email" required>
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Daftar</button>
             <button type="reset">Batal</button>
         </form>

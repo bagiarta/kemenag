@@ -16,10 +16,10 @@ class UserController extends Controller
         return view('users.index', ['users' => $users]);
     }
 
-    public function show($id)
+    public function show($nik)
     {
         // Mengambil data user berdasarkan ID
-        $user = User::findOrFail($id);
+        $user = User::findOrFail($nik);
 
         // Mengirim data user ke view untuk ditampilkan
         return view('users.show', ['user' => $user]);
@@ -28,13 +28,14 @@ class UserController extends Controller
     public function create()
     {
         // Menampilkan form untuk membuat user baru
-        return view('users.create');
+        return view('register');
     }
 
     public function store(Request $request)
     {
         // Validasi input form
         $request->validate([
+            'nik' => 'required',
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6',
@@ -42,6 +43,7 @@ class UserController extends Controller
 
         // Simpan data user baru ke database
         $user = new User([
+            'nik' => $request->nik,
             'name' => $request->name,
             'email' => $request->email,
             'password' => bcrypt($request->password),
@@ -65,6 +67,7 @@ class UserController extends Controller
     {
         // Validasi input form
         $request->validate([
+            'nik' => 'nik',
             'name' => 'required',
             'email' => 'required|email|unique:users,email,' . $id,
             'password' => 'nullable|min:6',
