@@ -8,9 +8,9 @@
     <title>Dashboard</title>
     <!-- Tambahkan link CSS di sini -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Atau sesuaikan dengan link CSS yang Anda gunakan -->
+    
     <style>
-        /* Tambahkan CSS kustom di sini */
+
     </style>
 </head>
 
