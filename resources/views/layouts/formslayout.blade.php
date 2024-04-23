@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <style>
+    
     .banner img {
         display: block;
         margin: 0 auto;
@@ -104,9 +105,7 @@
     }
 
     input[type="radio"]
-
-
-    </style>
+</style>
 
 
 

@@ -7,7 +7,6 @@
     <body>
         <h1>PELAYANAN PUBLIK</h1>
     </body>
-
     <div class="col-md-12">
 
         <div class="kategory">

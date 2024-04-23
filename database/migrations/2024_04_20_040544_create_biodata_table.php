@@ -12,16 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('biodata', function (Blueprint $table) {
-            $table->string('nik')->primary();
-            $table->string('nama');
-            $table->string('email')->unique();
+            $table->unsignedBigInteger('user_id');
             $table->date('ttl');
             $table->string('gender');
             $table->string('agama');
             $table->string('alamat');
             $table->string('telepon');
             $table->string('pekerjaan');
-            $table->timestamp('created_at')->nullable();
+            $table->timestamps();
+            $table->foreign('user_id')->on('users')->references('id')->onDelete('CASCADE')->onUpdate('CASCADE');
         });
     }
 

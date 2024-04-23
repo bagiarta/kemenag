@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -34,24 +35,27 @@ class UserController extends Controller
     public function store(Request $request)
     {
         // Validasi input form
-        $request->validate([
+        $validator = Validator::make($request->all(),[
             'nik' => 'required',
-            'name' => 'required',
+            'nama' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6',
         ]);
 
+        if($validator->fails()){
+            return back()->withErrors($validator->errors());
+        }
         // Simpan data user baru ke database
         $user = new User([
             'nik' => $request->nik,
-            'name' => $request->name,
+            'name' => $request->nama,
             'email' => $request->email,
             'password' => bcrypt($request->password),
         ]);
         $user->save();
 
         // Redirect ke halaman index dengan pesan sukses
-        return redirect()->route('users.index')->with('success', 'User berhasil ditambahkan!');
+        return redirect()->back()->with('success', 'User berhasil ditambahkan!');
     }
 
     public function edit($id)

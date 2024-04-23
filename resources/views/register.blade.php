@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 @extends('layouts.formslayout')
@@ -18,10 +16,16 @@
 
         <form action="{{ route('register.store') }}" method="POST">
             @csrf
+            @if (session()->has('success'))
+                <p>{{ session()->get('success') }}</p>
+            @endif
             <label for="nik">Nik</label>
             <input type="text" name="nik" placeholder="nik" required>
             <label for="nama">Nama</label>
             <input type="text" name="nama" placeholder="nama" required>
+            @if ($errors->has('nama'))
+                <div class="error">{{ $errors->first('nama') }}</div>
+            @endif
             <label for="email">Email</label>
             <input type="email" name="email" placeholder="email" required>
             <label for="password">Password</label>
