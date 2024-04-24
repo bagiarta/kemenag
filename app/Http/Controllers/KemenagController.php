@@ -45,26 +45,27 @@ class KemenagController extends Controller
 
     public function biodata()
     {
-        $user = User::with('biodata')->where('id',auth()->user()->id)->first();
-        return view('forms.form_biodata',[
+        $user = User::with('biodata')->where('id', auth()->user()->id)->first();
+        return view('forms.form_biodata', [
             'user' => $user
         ]);
     }
 
     public function updatebiodata()
     {
-        $user = User::with('biodata')->where('id',auth()->user()->id)->first();
-        return view('forms.form_update_biodata',compact('user'));
+        $user = User::with('biodata')->where('id', auth()->user()->id)->first();
+        return view('forms.form_update_biodata', compact('user'));
     }
 
-    public function updatebiodata_post(Request $request){
-        User::where('id',auth()->user()->id)->update([
+    public function updatebiodata_post(Request $request)
+    {
+        User::where('id', auth()->user()->id)->update([
             'name' => $request->nama,
             'email' => $request->email,
         ]);
-        $user_id = User::where('id',auth()->user()->id)->pluck('id')->first();
-        Biodata::where('user_id',$user_id)->updateOrCreate(['user_id' => $user_id],[
-            'user_id' => $user_id,
+        $user_id = User::where('id', auth()->user()->id)->pluck('id')->first();
+        // Biodata::where('user_id', $user_id)->updateOrCreate(['user_id' => $user_id], [
+        Biodata::updateOrCreate(['user_id' => $user_id], [
             'ttl' => $request->ttl,
             'gender' => $request->gender,
             'agama' => $request->agama,
@@ -72,7 +73,11 @@ class KemenagController extends Controller
             'telepon' => $request->telepon,
             'pekerjaan' => $request->pekerjaan,
         ]);
-        dd('success');
-
+        if ($user_id) {
+            return redirect()->route('biodata')->with('success', 'biodata berhasil diperbaharui.');
+        } else {
+            // Jika penyimpanan gagal
+            return back()->with('error', 'gagal melakukan perbaharuan data! Silakan coba lagi.');
+        }
     }
 }

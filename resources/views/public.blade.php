@@ -78,7 +78,7 @@
                     </button>
                 </div>
                 <div class="col-md-3">
-                    <button type="button" onclick="window.location.href='link_ke_edit'; "
+                    <button type="button" onclick="window.location.href='{{ 'biodata' }}'; "
                         style=" background: none; border: none;">
                         <img src="{{ asset('image/edit.png') }}" alt="edit" style="width: 100%; height: auto; ">
                     </button>

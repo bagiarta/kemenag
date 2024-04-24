@@ -17,26 +17,31 @@
             <label for="nik">NIK:</label>
             <input type="text" id="nik" name="nik" value="{{ $user->nik }}" readonly>
             <label for="nama">Nama</label>
-            <input type="text" id="nama" name="nama" value="{{ $user->name }}">
+            <input type="text" id="nama" name="nama" value="{{ $user->name }}" required>
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" value="{{ $user->email }}">
+            <input type="email" id="email" name="email" value="{{ $user->email }}" required>
             <label for="ttl">TTL</label>
-            <input type="date" name="ttl" id="ttl" value="{{ $user->biodata != null ? $user->biodata->ttl : null }}"><br>
+            <input type="date" name="ttl" id="ttl"
+                value="{{ $user->biodata != null ? $user->biodata->ttl : null }}" required><br>
             <label for="gender">Jenis Kelamin:</label>
             <input type="radio" name="gender" id="gender" value="laki-laki"
-                {{ $user->biodata != null ? ($user->biodata->gender == 'laki-laki' ? 'checked' : ''):null }}>
+                {{ $user->biodata != null ? ($user->biodata->gender == 'laki-laki' ? 'checked' : '') : null }}>
             <label for="gender">Laki-laki</label>
             <input type="radio" name="gender" id="gender" value="perempuan"
-                {{ $user->biodata != null ? ($user->biodata->gender == 'perempuan' ? 'checked' : ''):null }}>
-            <label for="gender">Perempuan</label><br><br>
-            <label for="agama">Agama</label>
-            <input type="text" name="agama" id="agama" value="{{ $user->biodata != null ? $user->biodata->agama : null }}">
+                {{ $user->biodata != null ? ($user->biodata->gender == 'perempuan' ? 'checked' : '') : null }}>
+            <label for="gender">Perempuan @required(true)</label><br><br>
+            <label for="agama">Agama </label>
+            <input type="text" name="agama" id="agama"
+                value="{{ $user->biodata != null ? $user->biodata->agama : null }}" required>
             <label for="alamat">Alamat</label>
-            <input type="text" name="alamat" id="alamat" value="{{ $user->biodata != null ? $user->biodata->alamat : null }}">
+            <input type="text" name="alamat" id="alamat"
+                value="{{ $user->biodata != null ? $user->biodata->alamat : null }}" required>
             <label for="telepon">TELEPON</label>
-            <input type="text" name="telepon" id="telepon" value="{{ $user->biodata != null ? $user->biodata->telepon : null }}">
+            <input type="text" name="telepon" id="telepon"
+                value="{{ $user->biodata != null ? $user->biodata->telepon : null }}"@required(true)>
             <label for="pekerjaan">Pekerjaan</label>
-            <input type="text" name="pekerjaan" id="pekerjaan" value="{{ $user->biodata != null ? $user->biodata->pekerjaan : null }}">
+            <input type="text" name="pekerjaan" id="pekerjaan"
+                value="{{ $user->biodata != null ? $user->biodata->pekerjaan : null }}"@required(true)>
 
             <button type="submit">Simpan </button>
             <button type="reset">Batal</button>

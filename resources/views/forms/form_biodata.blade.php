@@ -19,23 +19,9 @@
             <input type="text" id="nama" name="nama" value="{{ $user->name }}" readonly>
             <label for="email">Email</label>
             <input type="email" id="email" name="email" value="{{ $user->email }}" @readonly(true)>
-            {{-- <label for="ttl">TTL</label>
-            <input type="date" name="ttl" id="ttl" readonly><br>
-            <label for="gender">Jenis Kelamin:</label>
-            <input type="radio" name="gender" id="gender" value="laki-laki" readonly>
-            <label for="gender">Laki-laki</label>
-            <input type="radio" name="gender" id="gender" value="perempuan" readonly>
-            <label for="gender">Perempuan</label><br><br>
-            <label for="agama">Agama</label>
-            <input type="text" name="agama" id="agama"@readonly(true)>
-            <label for="alamat">Alamat</label>
-            <input type="text" name="alamat" id="alamat" readonly>
-            <label for="telepon">TELEPON</label>
-            <input type="text" name="telepon" id="telepon" readonly>
-            <label for="pekerjaan">Pekerjaan</label>
-            <input type="text" name="pekerjaan" id="pekerjaan" readonly> --}}
             <label for="ttl">TTL</label>
-            <input type="date" name="ttl" id="ttl" value="{{ $user->biodata != null ? $user->biodata->ttl : null }} " readonly><br>
+            <input type="date" name="ttl" id="ttl"
+                value="{{ $user->biodata != null ? $user->biodata->ttl : null }} " readonly><br>
             <label for="gender">Jenis Kelamin:</label>
             <input type="radio" name="gender" id="gender" value="laki-laki"
                 {{ $user->biodata != null ? ($user->biodata->gender == 'laki-laki' ? 'checked' : '') : null }} readonly>
@@ -56,7 +42,7 @@
             <input type="text" name="pekerjaan" id="pekerjaan"
                 value="{{ $user->biodata != null ? $user->biodata->pekerjaan : null }}" readonly>
 
-            <a class="btn-primary" href="{{ route('updatebiodata') }}">Ubah</a>
+            <button type="submit"><a href="{{ route('updatebiodata') }}">Ubah</button> </a>
             <button type="reset">Batal</button>
         </form>
 

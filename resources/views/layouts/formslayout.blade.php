@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <style>
-    
     .banner img {
         display: block;
         margin: 0 auto;
@@ -70,6 +69,16 @@
 
     button[type="reset"] {
         background-color: #007bff;
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+        width: 40%;
+        height: 30px;
+    }
+
+
+    .btn-primary {
+        background-color: #0056b3;
         color: #fff;
         font-weight: bold;
         cursor: pointer;
