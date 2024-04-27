@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>biodata</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 
 <body>
@@ -45,5 +47,14 @@
             <button type="submit"><a href="{{ route('updatebiodata') }}">Ubah</button> </a>
             <button type="reset">Batal</button>
         </form>
+        @if (session('success'))
+            <script>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Berhasil',
+                    text: '{{ session('success') }}'
+                });
+            </script>
+        @endif
 
 </body>

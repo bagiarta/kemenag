@@ -13,7 +13,7 @@ class UserRequestController extends Controller
         // Validasi request jika diperlukan
         $validatedData = $request->validate([
             'layanan' => 'required',
-            'email' => 'required|email|unique:user_requests,email',
+            'email' => 'required',
             'nama' => 'required',
             'telepon' => 'required',
             'alamat' => 'required',
