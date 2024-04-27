@@ -47,7 +47,7 @@
             <input type="text" id="alamat" name="alamat" required>
 
             <label for="catatan_tambahan">Catatan Tambahan:</label>
-            <textarea id="catatan_tambahan" name="catatan_tambahan"></textarea>
+            <textarea id="remarks" name="remarks"></textarea>
 
             <label for="file_proposal">Upload File Proposal:</label>
             <input type="file" id="file_proposal" name="file_proposal">
