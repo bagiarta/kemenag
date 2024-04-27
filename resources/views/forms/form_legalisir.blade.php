@@ -12,7 +12,7 @@
     <div class="banner">
         <img src="{{ asset('image/kopsurat.png') }}" alt="banner">
         <h1>LEGALISIR DOKUMEN</h1>
-        <form action="{{ route('submit-form') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('user-requests.store') }}" method="POST" enctype="multipart/form-data">
 
             @csrf
             <label for="nomor_permohonan">Nomor Permohonan:</label>

@@ -12,7 +12,7 @@
     <div class="banner">
         <img src="{{ asset('image/kopsurat.png') }}" alt="banner">
         <h1>PELAYANAN HAJI</h1>
-        <form action="{{ route('submit-form') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('user-requests.store') }}" method="POST" enctype="multipart/form-data">
 
             @csrf
             <label for="nomor_permohonan">Nomor Permohonan:</label>
@@ -51,7 +51,7 @@
             <input type="text" id="alamat" name="alamat" required>
 
             <label for="catatan_tambahan">Catatan Tambahan:</label>
-            <textarea id="catatan_tambahan" name="catatan_tambahan"></textarea>
+            <textarea id="remarks" name="remarks"></textarea>
 
             <label for="file_proposal">Upload File Proposal:</label>
             <input type="file" id="file_proposal" name="file_proposal">

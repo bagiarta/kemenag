@@ -2,20 +2,26 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class user_request extends Model
 {
-    protected $table = 'user_request';
-    protected $guarded = [];
+    protected $table = 'user_requests';
+    protected $guarded = ['id'];
 
-    public function email()
+    protected static function boot()
     {
-        return @$this->hasOne(user::class);
+        parent::boot();
+
+        static::creating(function ($model) {
+            $model->req_no = $model->generateReqNo();
+        });
     }
-    public function id()
+
+    protected function generateReqNo()
     {
-        return @$this->belongsTo(User::class, 'email', 'email');
+        $id = $this->id ?? self::max('id') + 1; // Mendapatkan id terbaru atau 1 jika tidak ada record
+        $date = now()->format('mdY');
+        return "{$id}/{$date}";
     }
 }
