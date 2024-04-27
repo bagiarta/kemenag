@@ -23,12 +23,14 @@
                             style=" background: none; border: none;">
                             <img src="{{ asset('image/btnpublik.png') }}" alt="layanan publik"
                                 style="width: 100%; height: auto; ">
+                            <span style="display: block; text-align: center; font-size: 28px;">LAYANAN PUBLIK</span>
                         </button>
                     </div>
                     <div class="col-md-4">
                         <button type="button" onclick="window.location.href='link_ke_ppid'; "
                             style=" background: none; border: none;">
                             <img src="{{ asset('image/btnppid.png') }}" alt="ppid" style="width: 100%; height: auto; ">
+                            <span style="display: block; text-align: center; font-size: 28px;">PPID</span>
                         </button>
                     </div>
                     <div class="col-md-4">
@@ -36,14 +38,15 @@
                             style=" background: none; border: none;">
                             <img src="{{ asset('image/btnbankdata.png') }}" alt="bank data"
                                 style="width: 100%; height: auto; ">
+                            <span style="display: block; text-align: center; font-size: 28px;">BANK DATA</span>
                         </button>
                     </div>
                     <div class="col-md-4">
                         <button type="button" onclick="window.location.href='link_ke_request';"
                             style=" background: none; border: none;">
-
                             <img src="{{ asset('image/btnrequest.png') }}" alt="request"
                                 style="width: 100%; height: auto; ">
+                            <span style="display: block; text-align: center; font-size: 28px;">REQUEST</span>
                         </button>
                     </div>
                     <div class="col-md-4">
@@ -51,6 +54,7 @@
                             style=" background: none; border: none;">
                             <img src="{{ asset('image/btnconsult.png') }}" alt="consult"
                                 style="width: 100%; height: auto; ">
+                            <span style="display: block; text-align: center; font-size: 28px;">KONSULTASI</span>
                         </button>
                     </div>
                     <div class="col-md-4">
@@ -58,13 +62,14 @@
                             style=" background: none; border: none;">
                             <img src="{{ asset('image/btnbergizi.png') }}" alt="bergizi"
                                 style="width: 100%; height: auto; ">
+                            <span style="display: block; text-align: center; font-size: 28px;">BERGIZI</span>
                         </button>
                     </div>
                     <div class="col-md-4">
                         <button type="button" onclick="window.location.href='link_ke_messi';"
                             style=" background: none; border: none;">
-
                             <img src="{{ asset('image/btnmessi.png') }}" alt="messi" style="width: 100%; height: auto; ">
+                            <span style="display: block; text-align: center; font-size: 28px;">MESSI</span>
                         </button>
                     </div>
                     <div class="col-md-4">
@@ -72,20 +77,11 @@
                             style=" background: none; border: none;">
                             <img src="{{ asset('image/btnservices.png') }}" alt="services"
                                 style="width: 100%; height: auto; ">
+                            <span style="display: block; text-align: center; font-size: 28px;">SERVICES</span>
                         </button>
                     </div>
                 </div>
             </div>
 
-        </div>
-        <div class="moreicon ">
-            <div class="row justify-content-center">
-                <img src="moreicon1.jpg" alt="icon1">
-                <img src="moreicon2.jpg" alt="icon2">
-            </div>
-        </div>
-        <!-- Peta lokasi -->
-        <div class="maps">
-            <!-- tambahkan kode peta-->
         </div>
     @endsection
