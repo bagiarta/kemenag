@@ -51,7 +51,7 @@
             <textarea id="remarks" name="remarks"></textarea>
 
             <label for="file_proposal">Upload File Proposal:</label>
-            <input type="file" id="file_proposal" name="file_proposal">
+            <input type="file" id="files" name="files">
 
             <button type="submit">Simpan</button>
         </form>

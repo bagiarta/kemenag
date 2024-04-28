@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\user_request;
-use App\Models\UserRequest;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class UserRequestController extends Controller
@@ -18,8 +18,14 @@ class UserRequestController extends Controller
             'telepon' => 'required',
             'alamat' => 'required',
             'remarks' => 'nullable',
+            'files' => 'nullable|file|mimes:pdf|max:5620',
         ]);
 
+        $path = null;
+        if ($request->hasFile('files')) {
+            $file = $request->file('files');
+            $path = $file->store('proposals', 'public');
+        }
         // Simpan data ke dalam tabel user_requests
         $userRequest = new user_request();
         $userRequest->layanan = $request->layanan;
@@ -28,10 +34,12 @@ class UserRequestController extends Controller
         $userRequest->telepon = $request->telepon;
         $userRequest->alamat = $request->alamat;
         $userRequest->remarks = $request->remarks;
+        $userRequest->files = $path;
+        $userRequest->status = 'proccess';
 
-        // Jangan set req_no di sini, akan diisi secara otomatis oleh event model
 
         $userRequest->save();
+        //dd($request->all());
 
         // Redirect atau berikan respons yang sesuai
         return redirect()->back()->with('success', 'Document request berhasil ditambahkan');

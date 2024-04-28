@@ -20,6 +20,8 @@ class CreateUserRequestsTable extends Migration
             $table->string('telepon');
             $table->string('alamat');
             $table->text('remarks')->nullable();
+            $table->string('files')->nullable();
+            $table->string('status')->default('proccess');
             $table->timestamps();
         });
     }
