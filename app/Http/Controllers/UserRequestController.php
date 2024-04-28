@@ -44,4 +44,24 @@ class UserRequestController extends Controller
         // Redirect atau berikan respons yang sesuai
         return redirect()->back()->with('success', 'Document request berhasil ditambahkan');
     }
+
+
+
+    public function processRequest($id, $action)
+    {
+        // Temukan data user_request berdasarkan ID
+        $userRequest = user_request::find($id);
+
+        // Ubah status sesuai dengan tindakan yang dilakukan
+        if ($action == 'approve') {
+            $userRequest->status = 'approved';
+        } elseif ($action == 'reject') {
+            $userRequest->status = 'rejected';
+        }
+
+        $userRequest->save();
+
+        return response()->json(['message' => 'Permintaan ' . ucfirst($action)]);
+    }
+
 }

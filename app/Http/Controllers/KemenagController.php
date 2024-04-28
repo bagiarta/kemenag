@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Biodata;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\user_request;
 
 class KemenagController extends Controller
 
@@ -37,6 +38,7 @@ class KemenagController extends Controller
     {
         return view('public');
     }
+
 
     public function legalisir()
     {
