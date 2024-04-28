@@ -46,6 +46,7 @@
 
             <button type="submit"><a href="{{ route('updatebiodata') }}">Ubah</button> </a>
             <button type="reset">Batal</button>
+            <button type="reset"><a href="{{ route('public') }}">Kembali</a></button>
         </form>
         @if (session('success'))
             <script>

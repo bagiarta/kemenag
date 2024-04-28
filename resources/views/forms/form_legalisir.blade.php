@@ -54,6 +54,7 @@
             <input type="file" id="files" name="files">
 
             <button type="submit">Simpan</button>
+            <button type="reset"><a href="{{ route('public') }}">Kembali</a></button>
         </form>
         @if (session('success'))
             <script>
