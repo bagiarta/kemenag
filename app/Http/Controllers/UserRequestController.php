@@ -24,7 +24,7 @@ class UserRequestController extends Controller
         $path = null;
         if ($request->hasFile('files')) {
             $file = $request->file('files');
-            $path = $file->store('proposals', 'public');
+            $path = $file->store();
         }
         // Simpan data ke dalam tabel user_requests
         $userRequest = new user_request();
@@ -63,5 +63,4 @@ class UserRequestController extends Controller
 
         return response()->json(['message' => 'Permintaan ' . ucfirst($action)]);
     }
-
 }

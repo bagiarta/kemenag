@@ -8,7 +8,6 @@
     }
 
     body {
-        /*--background-image: url("{{ asset('image/background.png') }}");*/
         padding: 20px;
         border-radius: 8px;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -53,9 +52,9 @@
         padding: 10px;
         margin-bottom: 10px;
         border: 1px solid #ccc;
-        border-radius: 5px;
         box-sizing: border-box;
         font-size: 16px;
+        border-radius: 30px;
     }
 
     button[type="submit"] {
@@ -65,6 +64,7 @@
         cursor: pointer;
         width: 40%;
         height: 30px;
+        border-radius: 30px;
     }
 
     button[type="reset"] {
@@ -74,6 +74,7 @@
         cursor: pointer;
         width: 40%;
         height: 30px;
+        border-radius: 30px;
     }
 
 
@@ -92,7 +93,7 @@
     }
 
     button[type="reset"] {
-        background-color: #f80a06;
+        background-color: #06e0f8c8;
 
     }
 

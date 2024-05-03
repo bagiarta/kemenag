@@ -35,14 +35,14 @@ class UserController extends Controller
     public function store(Request $request)
     {
         // Validasi input form
-        $validator = Validator::make($request->all(),[
+        $validator = Validator::make($request->all(), [
             'nik' => 'required',
             'nama' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6',
         ]);
 
-        if($validator->fails()){
+        if ($validator->fails()) {
             return back()->withErrors($validator->errors());
         }
         // Simpan data user baru ke database
