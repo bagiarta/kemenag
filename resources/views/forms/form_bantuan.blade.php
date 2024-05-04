@@ -59,10 +59,10 @@
             <input type="text" id="alamat" name="alamat" required>
 
             <label for="catatan_tambahan">Catatan Tambahan:</label>
-            <textarea id="remarks" name="remarks"></textarea>
+            <textarea id="remarks" name="remarks" required></textarea>
 
             <label for="file_proposal">Upload File Proposal:</label>
-            <input type="file" id="files" name="files">
+            <input type="file" id="files" name="files" required>
 
             <button type="submit">Simpan</button>
             <button type="reset"><a href="{{ route('public') }}">Kembali</a></button>

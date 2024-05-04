@@ -37,3 +37,5 @@ Route::group(['middleware' => 'auth'], function () {
     route::get('legalisir', [KemenagController::class, 'legalisir'])->name('legalisir');
     Route::get('/biodata/{nik}', [BiodataController::class, 'show'])->name('biodata.show');
 });
+Route::get('form/{userId}', [UserRequestController::class, 'showFormhaji'])->name('form.show');
+Route::post('form/store', [UserRequestController::class, 'store'])->name('form.store');
