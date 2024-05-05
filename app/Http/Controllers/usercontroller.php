@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -100,5 +101,11 @@ class UserController extends Controller
 
         // Redirect ke halaman index dengan pesan sukses
         return redirect()->route('users.index')->with('success', 'User berhasil dihapus!');
+    }
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        return redirect('/')->with('success', 'Anda telah berhasil logout.');
     }
 }

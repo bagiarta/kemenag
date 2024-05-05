@@ -36,4 +36,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
     route::get('legalisir', [KemenagController::class, 'legalisir'])->name('legalisir');
     Route::get('/biodata/{nik}', [BiodataController::class, 'show'])->name('biodata.show');
+    Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 });
