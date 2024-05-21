@@ -1,122 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-<style>
-    .banner img {
-        display: block;
-        margin: 0 auto;
-        height: flex;
-    }
 
-    body {
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        background-size: 10%;
-        background-position: auto;
-        position: center;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            padding: 20px;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f8f9fa;
+        }
 
-    }
+        .banner img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
 
-    form {
+        .banner h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
 
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        width: 800px;
-        position: flex;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
-    }
+        form {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            background: #ffffff;
+        }
 
+        label,
+        p {
+            margin-bottom: 10px;
+            display: block;
+            font-weight: bold;
+        }
 
-    h1 {
-        text-align: center;
-        margin-bottom: 20px;
-    }
+        input[type="text"],
+        input[type="email"],
+        input[type="file"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
 
-    input[type="text"],
-    input[type="email"],
-    input[type="password"],
-    input[type="file"],
-    input[type="date"],
-    textarea,
-    select {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 10px;
-        border: 1px solid #ccc;
-        box-sizing: border-box;
-        font-size: 16px;
-        border-radius: 30px;
-    }
+        button[type="submit"],
+        button[type="reset"] {
+            background-color: #007bff;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            width: calc(50% - 10px);
+            height: 40px;
+            border: none;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
 
-    button[type="submit"] {
-        background-color: #007bff;
-        color: #fff;
-        font-weight: bold;
-        cursor: pointer;
-        width: 40%;
-        height: 30px;
-        border-radius: 30px;
-    }
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
 
-    button[type="reset"] {
-        background-color: #007bff;
-        color: #fff;
-        font-weight: bold;
-        cursor: pointer;
-        width: 40%;
-        height: 30px;
-        border-radius: 30px;
-    }
+        button[type="reset"] {
+            background-color: #6c757d;
+        }
 
+        button[type="reset"]:hover {
+            background-color: #5a6268;
+        }
 
-    .btn-primary {
-        background-color: #0056b3;
-        color: #fff;
-        font-weight: bold;
-        cursor: pointer;
-        width: 40%;
-        height: 30px;
-    }
+        button[type="submit"]+button[type="reset"] {
+            margin-left: 20px;
+        }
 
-    button[type="submit"]:hover {
-        background-color: #0056b3;
+        p a {
+            color: #007bff;
+            text-decoration: none;
+        }
 
-    }
+        p a:hover {
+            text-decoration: underline;
+        }
 
-    button[type="reset"] {
-        background-color: #06e0f8c8;
+        @media (max-width: 600px) {
+            form {
+                padding: 15px;
+            }
 
-    }
+            button[type="submit"],
+            button[type="reset"] {
+                width: 100%;
+                margin: 5px 0;
+            }
 
-    p {
-        text-align: center;
-        text-align: left;
-        margin-top: 10px;
-    }
+            button[type="submit"]+button[type="reset"] {
+                margin-left: 0;
+            }
+        }
 
-    p a {
-        text-align: center;
-        color: #007bff;
-        text-decoration: none;
-    }
-
-    p a:hover {
-
-        text-decoration: underline;
-    }
-
-    input[type="radio"]
-</style>
-
-
-
-</html>
+        </body></html>
