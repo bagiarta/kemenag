@@ -7,9 +7,6 @@
         <div class="col-md-12">
             <!-- Banner dengan gambar dan teks -->
             <div class="banner">
-                <img src="{{ asset('image/kemenag1.png') }}" alt="banner" style="width: 40%; height: auto;">
-                <p style="text-align: right;">Beranda Pusaka Kemenag RI Srikadi E-kinerja Panduan Haji dan Umrah Hubungi Kami
-                </p>
                 <img src="{{ asset('image/banner1.png') }}" alt="banner" style="width: 100%; height: auto;">
             </div>
         </div>

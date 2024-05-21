@@ -7,9 +7,11 @@ use App\Http\Controllers\BiodataController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserRequestController;
 use Illuminate\Support\Facades\Hash;
+use app\Http\Controllers\ReportRequestController;
+
 
 Route::get('/', function () {
-    return view('dashboard');
+    return view('dashboard'); //mengganti ke employe test
 });
 
 Route::get('dahsboard', [CustomAuthController::class, 'dashboard']);
@@ -38,3 +40,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/biodata/{nik}', [BiodataController::class, 'show'])->name('biodata.show');
     Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 });
+
+
+
+Route::get('/generate-report', [ReportRequestController::class, 'generateReport'])->name('generate-report');
+
+Route::post('/approve-request/{id}', [ReportRequestController::class, 'approveRequest'])->name('approve-request');
+
+Route::post('/reject-request/{id}', [ReportRequestController::class, 'rejectRequest'])->name('reject-request');
