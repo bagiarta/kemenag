@@ -2,30 +2,40 @@
 
 namespace App\Http\Controllers;
 
-use illuminate\Http\Request;
-use app\Models\user_request;
+use App\Models\user_request;
+use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 
 class ReportRequestController extends Controller
 {
+    public function index()
+    {
+        // Mengambil semua data permintaan dari database
+        $userRequests = user_request::all();
+
+        // Mengirim data ke view
+        return view('reports.reportrequest', compact('userRequests'));
+    }
+
     public function generateReport()
     {
-        $userRequest = user_request::all();
+        $userRequests = user_request::all();
 
         $data = [
-            'userRequest' => $userRequest,
+            'userRequests' => $userRequests,
         ];
 
-        $pdf = PDF::loadView('report.user_requests', $data);
-        return $pdf->download('uer_request_report.pdf');
+        $pdf = Pdf::loadView('reports.reportrequest', $data);
+        return $pdf->download('request proccess.pdf');
     }
+
     public function approveRequest($id)
     {
         $userRequest = user_request::findOrFail($id);
-        $userRequest->stat = 'approved';
+        $userRequest->status = 'approved';
         $userRequest->save();
 
-        return redirect()->back()->with('success', 'permohonan disetujui');
+        return redirect()->back()->with('success', 'Permohonan disetujui');
     }
 
     public function rejectRequest($id)
@@ -34,6 +44,6 @@ class ReportRequestController extends Controller
         $userRequest->status = 'rejected';
         $userRequest->save();
 
-        return redirect()->back()->with('sucess', 'permohonan ditolak');
+        return redirect()->back()->with('success', 'Permohonan ditolak');
     }
 }

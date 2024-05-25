@@ -6,12 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>request proccess</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .status-approved {
+            background-color: #07f33e;
+            /* Warna hijau */
+        }
+
+        .status-rejected {
+            background-color: #f30707;
+            /* Warna merah */
+        }
+
+        .status-proccess {
+            background-color: #f3d707;
+            /* Warna kuning */
+        }
+    </style>
+</head>
+
 </head>
 
 <body>
-    <h1>Poccess Request </h1>
+    <h1>Data Request </h1>
 
-    <table>
+    <table border="1">
         <thead>
             <tr>
                 <th>Nomor Permohonan </th>
@@ -36,11 +70,18 @@
                     <td>{{ $userRequest->telepon }}</td>
                     <td>{{ $userRequest->alamat }}</td>
                     <td>{{ $userRequest->remarks }}</td>
-                    <td>{{ $userRequest->status }}</td>
+                    <td
+                        class="
+                        @if ($userRequest->status == 'approved') status-approved
+                        @elseif($userRequest->status == 'rejected') status-rejected
+                        @elseif($userRequest->status == 'proccess') status-proccess @endif
+                    ">
+                        {{ $userRequest->status }}
+                    </td>
 
                     <td>
-                        @if ($userRequest->status == 'pending')
-                            <form action="{{ route('aprrove-request', $userRequest->id) }}" method="POST">
+                        @if ($userRequest->status == 'proccess')
+                            <form action="{{ route('approve-request', $userRequest->id) }}" method="POST">
                                 @csrf
                                 <button type="submit">Approve</button>
                             </form>
