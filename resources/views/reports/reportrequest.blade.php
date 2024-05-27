@@ -6,38 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>request proccess</title>
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-
-        th,
-        td {
-            border: 1px solid black;
-            padding: 8px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        .status-approved {
-            background-color: #07f33e;
-            /* Warna hijau */
-        }
-
-        .status-rejected {
-            background-color: #f30707;
-            /* Warna merah */
-        }
-
-        .status-proccess {
-            background-color: #f3d707;
-            /* Warna kuning */
-        }
-    </style>
+    @extends('layouts.reportlayout')
 </head>
 
 </head>
@@ -45,6 +14,20 @@
 <body>
     <h1>Data Request </h1>
 
+    <a
+        href="{{ route('generate-report', ['search' => request()->input('search'), 'status' => request()->input('status')]) }}">
+        <button>Download Pdf</button>
+    </a>
+    <form method="GET" action="{{ route('search') }}">
+        <input type="text" name="search" placeholder="Cari..." value="{{ request()->input('search') }}">
+        <select name="status">
+            <option value="all">Semua Status</option>
+            <option value="approved" {{ request()->input('status') == 'approved' ? 'selected' : '' }}>Approved</option>
+            <option value="rejected" {{ request()->input('status') == 'rejected' ? 'selected' : '' }}>Rejected</option>
+            <option value="proccess" {{ request()->input('status') == 'proccess' ? 'selected' : '' }}>Proccess</option>
+        </select>
+        <button type="submit">Search</button>
+    </form>
     <table border="1">
         <thead>
             <tr>
@@ -56,6 +39,7 @@
                 <th>Alamat</th>
                 <th>catatan</th>
                 <th>Status</th>
+                <th>Alasan</th>
                 <th>Action</th>
 
             </tr>
@@ -78,15 +62,18 @@
                     ">
                         {{ $userRequest->status }}
                     </td>
+                    <td>{{ $userRequest->reason }}</td>
 
                     <td>
                         @if ($userRequest->status == 'proccess')
                             <form action="{{ route('approve-request', $userRequest->id) }}" method="POST">
                                 @csrf
+                                <input type="text" name="reason" placeholder="Alasan approve">
                                 <button type="submit">Approve</button>
                             </form>
                             <form action="{{ route('reject-request', $userRequest->id) }}" method="POST">
                                 @csrf
+                                <input type="text" name="reason" placeholder="Alasan reject">
                                 <button type="submit">Reject</button>
                             </form>
                         @endif

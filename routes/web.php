@@ -10,9 +10,6 @@ use App\Http\Controllers\UserRequestController;
 use Illuminate\Support\Facades\Hash;
 
 
-Route::get('/test', function () {
-    return 'test';
-});
 Route::get('/', function () {
     return view('dashboard'); //mengganti ke employe test
 });
@@ -42,10 +39,9 @@ Route::group(['middleware' => 'auth'], function () {
     route::get('legalisir', [KemenagController::class, 'legalisir'])->name('legalisir');
     Route::get('/biodata/{nik}', [BiodataController::class, 'show'])->name('biodata.show');
     Route::post('/logout', [UserController::class, 'logout'])->name('logout');
-    Route::get('/show-report', [ReportRequestController::class, 'index'])->name('show-report');
+    Route::get('/search', [ReportRequestController::class, 'index'])->name('search');
+    Route::get('/generate-report', [ReportRequestController::class, 'generateReport'])->name('generate-report');
+    Route::post('/approve-request/{id}', [ReportRequestController::class, 'approveRequest'])->name('approve-request');
+    Route::post('/reject-request/{id}', [ReportRequestController::class, 'rejectRequest'])->name('reject-request');
 });
-
-
-Route::get('/generate-report', [ReportRequestController::class, 'generateReport'])->name('generate-report');
-Route::post('/approve-request/{id}', [ReportRequestController::class, 'approveRequest'])->name('approve-request');
-Route::post('/reject-request/{id}', [ReportRequestController::class, 'rejectRequest'])->name('reject-request');
+Route::get('/public', [KemenagController::class, 'index'])->name('public');

@@ -79,10 +79,11 @@
                     </button>
                 </div>
                 <div class="col-md-3">
-                    <button type="button" onclick="window.location.href='{{ 'show-report' }}'; "
+                    <button type="button" onclick="window.location.href='{{ 'search' }}'; "
                         style=" background: none; border: none;">
                         <img src="{{ asset('image/progres.png') }}" alt="progres" style="width: 100%; height: auto; ">
                         <span style="display: block; text-align: center; font-size: 28px;">PROGRESS PERMOHONAN</span>
+                        <span style="display: block; text-align: center; font-size: 32px;">New:{{ $totalRequests }}</span>
                     </button>
                 </div>
                 <div class="col-md-3">

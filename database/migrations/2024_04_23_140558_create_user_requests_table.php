@@ -22,6 +22,7 @@ class CreateUserRequestsTable extends Migration
             $table->text('remarks')->nullable();
             $table->string('files')->nullable();
             $table->string('status')->default('proccess');
+            $table->text('reason');
             $table->timestamps();
         });
     }

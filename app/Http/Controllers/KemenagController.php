@@ -10,6 +10,12 @@ use App\Models\user_request;
 class KemenagController extends Controller
 
 {
+    public function index()
+    {
+        $totalRequests = user_request::where('status', 'proccess')->count();
+        return view('public', compact('totalRequests'));
+    }
+
     public function formbantuan()
     {
         return view('forms.form_bantuan');
