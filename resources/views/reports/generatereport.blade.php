@@ -21,9 +21,9 @@
                 <th>Layanan</th>
                 <th>Nama</th>
                 <th>Telepon</th>
-                <th>Alamat</th>
                 <th>catatan</th>
                 <th>Status</th>
+                <th>reason</th>
             </tr>
         </thead>
         <tbody>
@@ -33,9 +33,9 @@
                     <td>{{ $userRequest->layanan }}</td>
                     <td>{{ $userRequest->nama }}</td>
                     <td>{{ $userRequest->telepon }}</td>
-                    <td>{{ $userRequest->alamat }}</td>
                     <td>{{ $userRequest->remarks }}</td>
                     <td>{{ $userRequest->status }}</td>
+                    <td>{{ $userRequest->reason }}</td>
                 </tr>
             @endforeach
         </tbody>
