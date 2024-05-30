@@ -18,8 +18,8 @@ class UserRequestController extends Controller
             'nama' => 'required',
             'telepon' => 'required',
             'alamat' => 'required',
-            'remarks' => 'nullable',
-            'files' => 'nullable|file|mimes:pdf|max:5620',
+            'remarks' => 'required',
+            'files' => 'required|file|mimes:pdf|max:5620',
         ]);
 
         $path = null;

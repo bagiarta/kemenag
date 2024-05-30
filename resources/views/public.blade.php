@@ -71,7 +71,7 @@
                     </button>
                 </div>
                 <div class="col-md-3">
-                    <button type="button" onclick="window.location.href='{{ 'formlayanan'}}'; "
+                    <button type="button" onclick="window.location.href='{{ 'formlayanan' }}'; "
                         style=" background: none; border: none;">
                         <img src="{{ asset('image/btnmessi.png') }}" alt="pelayanankhusus"
                             style="width: 100%; height: auto; ">
@@ -80,16 +80,17 @@
                 </div>
 
                 <div class="col-md-3">
-                    <button type="button" onclick="window.location.href='{{ 'search' }}';" style="background: none; border: none; position: relative; width: 100%;">
+                    <button type="button" onclick="window.location.href='{{ 'search' }}';"
+                        style="background: none; border: none; position: relative; width: 100%;">
                         <img src="{{ asset('image/progres .png') }}" alt="progres" style="width: 100%; height: auto;">
                         <span style="display: block; text-align: center; font-size: 28px;">PROGRESS PERMOHONAN</span>
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                            {{$totalRequests}}
+                            {{ $totalRequests }}
                             <span class="visually-hidden">unread messages</span>
                         </span>
                     </button>
                 </div>
-                
+
                 <div class="col-md-3">
                     <button type="button" onclick="window.location.href='{{ 'biodata' }}'; "
                         style=" background: none; border: none;">
@@ -101,5 +102,4 @@
         </div>
 
     </div>
-
 @endsection

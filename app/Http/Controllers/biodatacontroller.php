@@ -7,10 +7,10 @@ use App\Models\Biodata;
 
 class biodatacontroller extends Controller
 {
-    public function show($nik)
+    public function show($id)
     {
 
-        $biodata = Biodata::where('nik', $nik)->firstOrFail();
+        $biodata = Biodata::where('nik', $id)->firstOrFail();
         return view('forms.form_update_biodata', compact('biodata'));
     }
 }
