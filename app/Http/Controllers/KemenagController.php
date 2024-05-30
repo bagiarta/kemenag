@@ -21,6 +21,11 @@ class KemenagController extends Controller
         return view('forms.form_bantuan');
     }
 
+    public function formkepegawaian()
+    {
+        return view('forms.form_kepegawaian');
+    }
+
     public function formhaji()
     {
         return view('forms.form_haji');

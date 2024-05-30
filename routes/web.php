@@ -43,5 +43,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/generate-report', [ReportRequestController::class, 'generateReport'])->name('generate-report');
     Route::post('/approve-request/{id}', [ReportRequestController::class, 'approveRequest'])->name('approve-request');
     Route::post('/reject-request/{id}', [ReportRequestController::class, 'rejectRequest'])->name('reject-request');
+    Route::get('/public', [KemenagController::class, 'index'])->name('public');
+    route::get('formkepegawaian', [KemenagController::class, 'formkepegawaian'])->name('formkepegawaian');
+    route::get('formlayanan', [KemenagController::class, 'formlayanan'])->name('formlayanan');
 });
-Route::get('/public', [KemenagController::class, 'index'])->name('public');

@@ -27,6 +27,9 @@
             <option value="proccess" {{ request()->input('status') == 'proccess' ? 'selected' : '' }}>Proccess</option>
         </select>
         <button type="submit">Search</button>
+        <button type="reset" onclick="window.history.back();" class="btn btn-secondary">
+            Kembali
+        </button>
     </form>
     <table border="1">
         <thead>

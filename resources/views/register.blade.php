@@ -31,7 +31,9 @@
             <label for="password">Password</label>
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Daftar</button>
-            <button type="reset">Batal</button>
+            <button type="reset" onclick="window.history.back();" class="btn btn-secondary">
+                Kembali
+            </button>
         </form>
 
         <p style="text-align: center">Sudah punya akun? <a href="{{ route('login') }}">login</a></p>

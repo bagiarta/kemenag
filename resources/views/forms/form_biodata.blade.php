@@ -44,9 +44,10 @@
             <input type="text" name="pekerjaan" id="pekerjaan"
                 value="{{ $user->biodata != null ? $user->biodata->pekerjaan : null }}" readonly>
 
-            <button type="submit"><a href="{{ route('updatebiodata') }}">Ubah</button> </a>
-            <button type="reset">Batal</button>
-            <button type="reset"><a href="{{ route('public') }}">Kembali</a></button>
+            <button type="submit">Ubah</button> </a>
+            <button type="reset" onclick="window.history.back();" class="btn btn-secondary">
+                Kembali
+            </button>
         </form>
         @if (session('success'))
             <script>

@@ -5,14 +5,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>legalisir dokumen</title>
+    <title>kua</title>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 
 <body>
     <div class="banner">
         <img src="{{ asset('image/kopsurat.png') }}" alt="banner">
-        <h1>LEGALISIR DOKUMEN</h1>
+        <h1>KUA</h1>
         <form action="{{ route('user-requests.store') }}" method="POST" enctype="multipart/form-data">
 
             @csrf
@@ -21,16 +21,20 @@
 
             <label for="layanan">Pilih Layanan:</label>
             <select id="layanan" name="layanan" required>
-                <option value="Legalisisr Dokumen">Legalisisr Dokumen
+                <option value="SP Khusus WA Siaga">SP Khusus WA Siaga</option>
+                <option value="SP Layanan Khusus">SP Layanan Khusus</option>
+                <option value="SP Layanan Antar Jemput Berkas">SP Layanan Antar Jemput Berkas</option>
             </select>
 
             <p>Persyaratan:</p>
             <ul>
-                <p>Mengajukan Permohonan Legalisir dokumen</p>
+                <p>Mengajukan SP Khusus WA Siaga/ SP Layanan Khusus/
+                    SP Layanan Antar Jemput Berkas Ke Kantor Kementerian Agama Kabupaten Bangli
+                </p>
                 <ul>
-                    <P>SOP Pelayanan dan Dokumen Terkait bisa di <a href="#">download</a> </P>
-                    <li>Standar Pelayanan Permohonan Izin Bantuan</li>
-                    <li>SOP Permohonan Izin Bantuan</li>
+                    <P>SOP Pelayanan dan Dokumen Terkait bisa di <a href="#">download</a></P>
+                    <li>Standar Pelayanan Permohonan Bantuan</li>
+                    <li>SOP Permohonan Bantuan</li>
                     <li>Contoh Proposal</li>
                 </ul>
             </ul>

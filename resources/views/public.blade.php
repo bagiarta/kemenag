@@ -56,7 +56,7 @@
                     </button>
                 </div>
                 <div class="col-md-3">
-                    <button type="button" onclick="window.location.href='link_ke_pegawai=';"
+                    <button type="button" onclick="window.location.href='{{ 'formkepegawaian' }}';"
                         style=" background: none; border: none;">
                         <img src="{{ asset('image/btnrequest.png') }}" alt="pegawai" style="width: 100%; height: auto; ">
                         <span style="display: block; text-align: center; font-size: 28px;">KEPEGAWAIAN</span>
@@ -71,21 +71,25 @@
                     </button>
                 </div>
                 <div class="col-md-3">
-                    <button type="button" onclick="window.location.href='link_ke_pelayanankhusus'; "
+                    <button type="button" onclick="window.location.href='{{ 'formlayanan'}}'; "
                         style=" background: none; border: none;">
                         <img src="{{ asset('image/btnmessi.png') }}" alt="pelayanankhusus"
                             style="width: 100%; height: auto; ">
                         <span style="display: block; text-align: center; font-size: 28px;">PELAYANAN KHUSUS</span>
                     </button>
                 </div>
+
                 <div class="col-md-3">
-                    <button type="button" onclick="window.location.href='{{ 'search' }}'; "
-                        style=" background: none; border: none;">
-                        <img src="{{ asset('image/progres.png') }}" alt="progres" style="width: 100%; height: auto; ">
+                    <button type="button" onclick="window.location.href='{{ 'search' }}';" style="background: none; border: none; position: relative; width: 100%;">
+                        <img src="{{ asset('image/progres .png') }}" alt="progres" style="width: 100%; height: auto;">
                         <span style="display: block; text-align: center; font-size: 28px;">PROGRESS PERMOHONAN</span>
-                        <span style="display: block; text-align: center; font-size: 32px;">New:{{ $totalRequests }}</span>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            {{$totalRequests}}
+                            <span class="visually-hidden">unread messages</span>
+                        </span>
                     </button>
                 </div>
+                
                 <div class="col-md-3">
                     <button type="button" onclick="window.location.href='{{ 'biodata' }}'; "
                         style=" background: none; border: none;">
@@ -98,8 +102,4 @@
 
     </div>
 
-    <!-- Peta lokasi -->
-    <div class="maps">
-        <!-- tambahkan kode peta-->
-    </div>
 @endsection

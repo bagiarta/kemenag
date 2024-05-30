@@ -61,8 +61,9 @@
             <input type="file" id="files" name="files" required>
 
             <button type="submit">Simpan</button>
-            <button type="reset"><a href="{{ route('public') }}">Kembali</a></button>
-        </form>
+            <button type="reset" onclick="window.history.back();" class="btn btn-secondary">
+                Kembali
+            </button>
         @if (session('success'))
             <script>
                 Swal.fire({

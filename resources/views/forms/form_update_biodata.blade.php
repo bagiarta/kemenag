@@ -45,7 +45,9 @@
                 value="{{ $user->biodata != null ? $user->biodata->pekerjaan : null }}"@required(true)>
 
             <button type="submit">Simpan </button>
-            <button type="reset"><a href="{{ route('public') }}">Kembali</a></button>
+            <button type="reset" onclick="window.history.back();" class="btn btn-secondary">
+                Kembali
+            </button>
         </form>
     </div>
     @if (session('success'))

@@ -5,14 +5,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>legalisir dokumen</title>
+    <title>kepegawaian</title>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 
 <body>
     <div class="banner">
         <img src="{{ asset('image/kopsurat.png') }}" alt="banner">
-        <h1>LEGALISIR DOKUMEN</h1>
+        <h1>KEPEGAWAIAN</h1>
         <form action="{{ route('user-requests.store') }}" method="POST" enctype="multipart/form-data">
 
             @csrf
@@ -21,16 +21,23 @@
 
             <label for="layanan">Pilih Layanan:</label>
             <select id="layanan" name="layanan" required>
-                <option value="Legalisisr Dokumen">Legalisisr Dokumen
+                <option value="Tugas Belajar">Tugas Belajar</option>
+                <option value="Pensiun Pegawai">Pensiun Pegawai</option>
+                <option value="Kenaikan pangkat">Kenaikan pangkat</option>
+                <option value="SP Permohonan Tunjangan Profesi Guru (TPG)">SP Permohonan Tunjangan Profesi Guru (TPG)</option>
+                <option value="SP Insentif/ Tunjangan Guru Non PNS">SP Insentif/ Tunjangan Guru Non PNS</option>
             </select>
 
             <p>Persyaratan:</p>
             <ul>
-                <p>Mengajukan Permohonan Legalisir dokumen</p>
+                <p>Mengajukan Permohonan Tugas Belajar/ Pensiun Pegawai/ Kenaikan Pangkat/
+                     SP Permohonan Tunjangan Profesi Guru (TPG)/SP Insentif/ Tunjangan Guru Non PNS 
+                     Ke Kantor Kementerian Agama Kabupaten Bangli
+                </p>
                 <ul>
-                    <P>SOP Pelayanan dan Dokumen Terkait bisa di <a href="#">download</a> </P>
-                    <li>Standar Pelayanan Permohonan Izin Bantuan</li>
-                    <li>SOP Permohonan Izin Bantuan</li>
+                    <P>SOP Pelayanan dan Dokumen Terkait bisa di <a href="#">download</a></P>
+                    <li>Standar Pelayanan Permohonan Bantuan</li>
+                    <li>SOP Permohonan Bantuan</li>
                     <li>Contoh Proposal</li>
                 </ul>
             </ul>

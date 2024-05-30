@@ -60,7 +60,9 @@
             <input type="file" id="files" name="files" required>
 
             <button type="submit">Simpan</button>
-            <button type="reset"><a href="{{ route('public') }}">Kembali</a></button>
+            <button type="reset" onclick="window.history.back();" class="btn btn-secondary">
+                Kembali
+            </button>
         </form>
 
 

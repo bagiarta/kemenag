@@ -1,84 +1,106 @@
-<!-- resources/views/dashboard.blade.php -->
 @extends('layouts.app')
 
-
 @section('content')
-    <div class="row">
-        <div class="col-md-12">
-            <!-- Banner dengan gambar dan teks -->
-            <div class="banner">
-                <img src="{{ asset('image/banner1.png') }}" alt="banner" style="width: 100%; height: auto;">
-            </div>
-        </div>
-        <div class="col-md-12">
-            <!-- Enam ikon kategori -->
+<style>
+    .btn-kategori {
+        background: none;
+        border: none;
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+        padding: 0;
+    }
 
-            <div class="kategory">
-                <div class="row justify-content-center">
-                    <div class="col-md-4">
-                        <button type="button" onclick="window.location.href= '{{ route('login') }}';"
-                            style=" background: none; border: none;">
-                            <img src="{{ asset('image/btnpublik.png') }}" alt="layanan publik"
-                                style="width: 100%; height: auto; ">
-                            <span style="display: block; text-align: center; font-size: 28px;">LAYANAN PUBLIK</span>
-                        </button>
-                    </div>
-                    <div class="col-md-4">
-                        <button type="button" onclick="window.location.href='link_ke_ppid'; "
-                            style=" background: none; border: none;">
-                            <img src="{{ asset('image/btnppid.png') }}" alt="ppid" style="width: 100%; height: auto; ">
-                            <span style="display: block; text-align: center; font-size: 28px;">PPID</span>
-                        </button>
-                    </div>
-                    <div class="col-md-4">
-                        <button type="button" onclick="window.location.href='link_ke_bankdata';"
-                            style=" background: none; border: none;">
-                            <img src="{{ asset('image/btnbankdata.png') }}" alt="bank data"
-                                style="width: 100%; height: auto; ">
-                            <span style="display: block; text-align: center; font-size: 28px;">BANK DATA</span>
-                        </button>
-                    </div>
-                    <div class="col-md-4">
-                        <button type="button" onclick="window.location.href='link_ke_request';"
-                            style=" background: none; border: none;">
-                            <img src="{{ asset('image/btnrequest.png') }}" alt="request"
-                                style="width: 100%; height: auto; ">
-                            <span style="display: block; text-align: center; font-size: 28px;">REQUEST</span>
-                        </button>
-                    </div>
-                    <div class="col-md-4">
-                        <button type="button" onclick="window.location.href='link_ke_consult'; "
-                            style=" background: none; border: none;">
-                            <img src="{{ asset('image/btnconsult.png') }}" alt="consult"
-                                style="width: 100%; height: auto; ">
-                            <span style="display: block; text-align: center; font-size: 28px;">KONSULTASI</span>
-                        </button>
-                    </div>
-                    <div class="col-md-4">
-                        <button type="button" onclick="window.location.href='link_ke_bergizi';"
-                            style=" background: none; border: none;">
-                            <img src="{{ asset('image/btnbergizi.png') }}" alt="bergizi"
-                                style="width: 100%; height: auto; ">
-                            <span style="display: block; text-align: center; font-size: 28px;">BERGIZI</span>
-                        </button>
-                    </div>
-                    <div class="col-md-4">
-                        <button type="button" onclick="window.location.href='link_ke_messi';"
-                            style=" background: none; border: none;">
-                            <img src="{{ asset('image/btnmessi.png') }}" alt="messi" style="width: 100%; height: auto; ">
-                            <span style="display: block; text-align: center; font-size: 28px;">MESSI</span>
-                        </button>
-                    </div>
-                    <div class="col-md-4">
-                        <button type="button" onclick="window.location.href='link_ke_services'; "
-                            style=" background: none; border: none;">
-                            <img src="{{ asset('image/btnservices.png') }}" alt="services"
-                                style="width: 100%; height: auto; ">
-                            <span style="display: block; text-align: center; font-size: 28px;">SERVICES</span>
-                        </button>
-                    </div>
+    .btn-kategori img {
+        max-width: 100%; /* mengatur gambar icon */
+        height: auto;
+    }
+
+    .btn-text {
+        display: block;
+        text-align: center;   /* mengatur font */
+        font-size: 28px;
+        margin-top: 10px;
+        color: black;
+    }
+
+    @media (max-width: 768px) {
+        .btn-text {
+            font-size: 24px; 
+        }
+    }
+
+    @media (max-width: 576px) {
+        .btn-text {
+            font-size: 20px; 
+        }
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- Banner dengan gambar dan teks -->
+        <div class="banner">
+            <img src="{{ asset('image/banner1.png') }}" alt="banner" class="img-fluid">
+        </div>
+    </div>
+    <div class="col-md-12">
+        <!-- Enam ikon kategori -->
+        <div class="kategori">
+            <div class="row justify-content-center">
+                <div class="col-6 col-md-4 mb-4 text-center">
+                    <button type="button" onclick="window.location.href='{{ route('login') }}';" class="btn-kategori">
+                        <img src="{{ asset('image/btnpublik.png') }}" alt="layanan publik" class="img-fluid mb-2">
+                        <span class="btn-text">LAYANAN PUBLIK</span>
+                    </button>
+                </div>
+                <div class="col-6 col-md-4 mb-4 text-center">
+                    <button type="button" onclick="window.location.href='link_ke_ppid';" class="btn-kategori">
+                        <img src="{{ asset('image/btnppid.png') }}" alt="ppid" class="img-fluid mb-2">
+                        <span class="btn-text">PPID</span>
+                    </button>
+                </div>
+                <div class="col-6 col-md-4 mb-4 text-center">
+                    <button type="button" onclick="window.location.href='link_ke_bankdata';" class="btn-kategori">
+                        <img src="{{ asset('image/btnbankdata.png') }}" alt="bank data" class="img-fluid mb-2">
+                        <span class="btn-text">BANK DATA</span>
+                    </button>
+                </div>
+                <div class="col-6 col-md-4 mb-4 text-center">
+                    <button type="button" onclick="window.location.href='link_ke_request';" class="btn-kategori">
+                        <img src="{{ asset('image/btnrequest.png') }}" alt="request" class="img-fluid mb-2">
+                        <span class="btn-text">REQUEST</span>
+                    </button>
+                </div>
+                <div class="col-6 col-md-4 mb-4 text-center">
+                    <button type="button" onclick="window.location.href='link_ke_consult';" class="btn-kategori">
+                        <img src="{{ asset('image/btnconsult.png') }}" alt="consult" class="img-fluid mb-2">
+                        <span class="btn-text">KONSULTASI</span>
+                    </button>
+                </div>
+                <div class="col-6 col-md-4 mb-4 text-center">
+                    <button type="button" onclick="window.location.href='link_ke_bergizi';" class="btn-kategori">
+                        <img src="{{ asset('image/btnbergizi.png') }}" alt="bergizi" class="img-fluid mb-2">
+                        <span class="btn-text">BERGIZI</span>
+                    </button>
+                </div>
+                <div class="col-6 col-md-4 mb-4 text-center">
+                    <button type="button" onclick="window.location.href='link_ke_messi';" class="btn-kategori">
+                        <img src="{{ asset('image/btnmessi.png') }}" alt="messi" class="img-fluid mb-2">
+                        <span class="btn-text">MESSI</span>
+                    </button>
+                </div>
+                <div class="col-6 col-md-4 mb-4 text-center">
+                    <button type="button" onclick="window.location.href='link_ke_services';" class="btn-kategori">
+                        <img src="{{ asset('image/btnservices.png') }}" alt="services" class="img-fluid mb-2">
+                        <span class="btn-text">SERVICES</span>
+                    </button>
                 </div>
             </div>
-
         </div>
-    @endsection
+    </div>
+</div>
+
+@endsection
+
+

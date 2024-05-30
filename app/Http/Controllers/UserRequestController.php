@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\user_request;
+use Egulias\EmailValidator\Result\Reason\Reason;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
@@ -36,6 +37,7 @@ class UserRequestController extends Controller
         $userRequest->remarks = $request->remarks;
         $userRequest->files = $path;
         $userRequest->status = 'proccess';
+        $userRequest->Reason = $request->reason;
 
 
         $userRequest->save();
