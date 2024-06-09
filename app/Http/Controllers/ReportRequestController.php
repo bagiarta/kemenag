@@ -11,6 +11,11 @@ class ReportRequestController extends Controller
     public function index(Request $request)
     {
         $query = user_request::query();
+        $user = auth()->user();
+
+        if ($user->role != 'admin') {
+            $query->where('nik', $user->nik);
+        }
 
         if ($request->has('search')) {
             $search = $request->input('search');
@@ -36,6 +41,11 @@ class ReportRequestController extends Controller
     public function generateReport(Request $request)
     {
         $query = user_request::query();
+        $user = auth()->user();
+
+        if ($user->level != 'admin') {
+            $query->where('nik_pemohon', $user->nik);
+        }
 
         if ($request->has('search')) {
             $search = $request->input('search');

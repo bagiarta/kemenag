@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        .button-container {
+            display: inline-block;
+        }
+
         body {
             padding: 20px;
             margin: 0;
@@ -59,7 +63,7 @@
             color: #fff;
             font-weight: bold;
             cursor: pointer;
-            width: calc(50% - 10px);
+            width: calc(60px - 10px);
             height: 40px;
             border: none;
             border-radius: 4px;
@@ -79,7 +83,7 @@
         }
 
         button[type="submit"]+button[type="reset"] {
-            margin-left: 20px;
+            margin-left: 30px;
         }
 
         p a {

@@ -6,6 +6,7 @@ use App\Models\user_request;
 use Egulias\EmailValidator\Result\Reason\Reason;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserRequestController extends Controller
 {
@@ -38,6 +39,7 @@ class UserRequestController extends Controller
         $userRequest->files = $path;
         $userRequest->status = 'proccess';
         $userRequest->Reason = $request->reason;
+        $userRequest->nik = auth()->user()->nik;
 
 
         $userRequest->save();
@@ -49,20 +51,26 @@ class UserRequestController extends Controller
 
 
 
-    public function processRequest($id, $action)
+    public function processRequest($id, $action, $user)
     {
-        // Temukan data user_request berdasarkan ID
         $userRequest = user_request::find($id);
+        $user = Auth::user();
 
-        // Ubah status sesuai dengan tindakan yang dilakukan
-        if ($action == 'approve') {
-            $userRequest->status = 'approved';
-        } elseif ($action == 'reject') {
-            $userRequest->status = 'rejected';
+        if ($user->role == 'admin') {
+            return redirect()->route('search');
+            // Ubah status sesuai dengan tindakan yang dilakukan
+            if ($action == 'approve') {
+                $userRequest->status = 'approved';
+            } elseif ($action == 'reject') {
+                $userRequest->status = 'rejected';
+            }
+        } else {
+            return redirect()->route('showreport');
+
+
+            $userRequest->save();
+
+            return response()->json(['message' => 'Permintaan ' . ucfirst($action)]);
         }
-
-        $userRequest->save();
-
-        return response()->json(['message' => 'Permintaan ' . ucfirst($action)]);
     }
 }

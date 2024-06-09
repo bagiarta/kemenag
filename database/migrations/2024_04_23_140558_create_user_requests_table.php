@@ -13,17 +13,21 @@ class CreateUserRequestsTable extends Migration
     {
         Schema::create('user_requests', function (Blueprint $table) {
             $table->id();
+            $table->string('nik');
             $table->string('req_no')->nullable();
             $table->string('layanan');
             $table->string('email');
             $table->string('nama');
             $table->string('telepon');
             $table->string('alamat');
-            $table->text('remarks')->nullable();
-            $table->string('files')->nullable();
+            $table->text('remarks');
+            $table->string('files');
             $table->string('status')->default('proccess');
-            $table->text('reason');
+            $table->text('reason')->nullable();
             $table->timestamps();
+            $table->foreign('nik')->on('users')->references('nik')->onDelete('CASCADE')->onUpdate('CASCADE');
+
+
         });
     }
 

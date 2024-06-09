@@ -2,21 +2,18 @@
 <html lang="en">
 @extends('layouts.formslayout')
 
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>bantuan pemerintah</title>
-
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
-
+@vite(['resources/sass/app.scss','resources/js/app.js'])
 <body>
     <div class="banner">
         <img src="{{ asset('image/kopsurat.png') }}" alt="banner">
         <h1>BANTUAN PEMERINTAH</h1>
         <form action="{{ route('user-requests.store') }}" method="POST" enctype="multipart/form-data">
-
             @csrf
             <label for="nomor_permohonan">Nomor Permohonan:</label>
             <input type="text" id="nomor_permohonan" name="nomor_permohonan" readonly>
@@ -64,10 +61,10 @@
             <label for="file_proposal">Upload File Proposal:</label>
             <input type="file" id="files" name="files" required>
 
-            <button type="submit">Simpan</button>
-            <button type="reset" onclick="window.history.back();" class="btn btn-secondary">
-                Kembali
-            </button>
+            <div style="display: flex; justify-content: space-between;">
+                <button type="submit" style="width: 48%;">Simpan</button>
+                <button type="reset" onclick="window.history.back();" style="width: 48%;">Kembali</button>
+            </div>
         </form>
         @if (session('success'))
             <script>
@@ -78,6 +75,7 @@
                 });
             </script>
         @endif
+    </div>
 </body>
 
 </html>

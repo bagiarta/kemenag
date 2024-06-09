@@ -17,11 +17,15 @@ class CustomAuthController extends Controller
     public function customLogin(Request $request)
     {
         // Implement custom login logic
-        $user = User::where('email',$request->email)->first();
-        if($user != null){
-            if(Hash::check($request->password,$user->password)){
+        $user = User::where('email', $request->email)->first();
+        if ($user != null) {
+            if (Hash::check($request->password, $user->password)) {
                 Auth::loginUsingId($user->id);
-                return redirect()->route('public');
+                if ($user->role == 'admin') {
+                    return redirect()->route('admin');
+                } else {
+                    return redirect()->route('public');
+                }
             }
         }
     }
@@ -46,6 +50,4 @@ class CustomAuthController extends Controller
         Auth::logout();
         return redirect('login');
     }
-
-
 }

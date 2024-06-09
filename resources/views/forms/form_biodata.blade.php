@@ -9,7 +9,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
-
+@vite(['resources/sass/app.scss','resources/js/app.js'])
 <body>
     <div class="banner">
         <img src="{{ asset('image/kopsurat.png') }}" alt="banner">
@@ -44,10 +44,10 @@
             <input type="text" name="pekerjaan" id="pekerjaan"
                 value="{{ $user->biodata != null ? $user->biodata->pekerjaan : null }}" readonly>
 
-            <button type="submit">Ubah</button> </a>
-            <button type="reset" onclick="window.history.back();" class="btn btn-secondary">
-                Kembali
-            </button>
+                <div style="display: flex; justify-content: space-between;">
+                    <button type="submit" style="width: 48%;">Simpan</button>
+                    <button type="reset" onclick="window.history.back();" style="width: 48%;">Kembali</button>
+                </div>
         </form>
         @if (session('success'))
             <script>

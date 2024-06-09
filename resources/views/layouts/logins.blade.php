@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -13,7 +14,7 @@
     }
 
     form {
-        background-color: rgb(225, 11, 11);
+        background-color: rgb(255, 255, 255);
         padding: 20px;
         border-radius: 8px;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);

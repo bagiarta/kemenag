@@ -52,6 +52,7 @@ class UserController extends Controller
             'name' => $request->nama,
             'email' => $request->email,
             'password' => bcrypt($request->password),
+            'role' => $request = 'guest',
         ]);
         $user->save();
 

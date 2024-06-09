@@ -10,6 +10,10 @@ use App\Models\user_request;
 class KemenagController extends Controller
 
 {
+    public function admindashboard()
+    {
+        return view('admin');
+    }
     public function index()
     {
         $totalRequests = user_request::where('status', 'proccess')->count();
